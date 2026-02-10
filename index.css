@@ -248,7 +248,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 800px;
+  height: 600px;
 }
 .Left-hero {
   width: 50%;
@@ -287,4 +287,113 @@ nav {
 .Left-hero i {
   color: #0056d2;
   font-size: 20px;
+}
+/* ONBOARD-SECTION */
+.onboard {
+  background-color: #0056d2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+.onboard h1 {
+  font-size: 64px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 15px;
+  text-align: center;
+  color: white;
+}
+.onboard p {
+  font-size: 20px;
+  font-family: Poppins;
+  color: #ffffff;
+  margin-bottom: 50px;
+}
+.order {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: white;
+  color: #0056d2;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Inter;
+  transition: transform 0.5s;
+}
+.order:hover {
+  transform: translateY(-5px);
+}
+.demo {
+  padding: 15px 30px;
+  border: 2px solid white;
+  border-radius: 30px;
+  color: white;
+  background: transparent;
+  font-size: 18px;
+  margin-left: 20px;
+  font-weight: 500;
+  font-family: Roboto;
+  transition: all 0.3s ease-in-out;
+}
+.demo:hover {
+  background-color: #fff;
+  color: #0056d2;
+}
+footer {
+  background-color: #111827;
+  padding: 80px 10%;
+}
+.bios {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.Link {
+  display: flex;
+  flex-direction: column;
+}
+.Link a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #949691;
+  margin-bottom: 15px;
+}
+.Link h2 {
+  color: white;
+  font-family: Poppins;
+}
+.Text {
+  margin-bottom: 50px;
+}
+.Text p {
+  max-width: 300px;
+  color: #949691;
+  font-family: Plus Jarkata Sans;
+}
+.Text h1 {
+  color: white;
+  font-family: Poppins;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.social-icons i {
+  color: #949691;
+}
+hr {
+  color: #949691;
+  height: 0.1px;
+}
+.last {
+  color: #949691;
+  font-family: Plus Jarkata Sans;
 }
