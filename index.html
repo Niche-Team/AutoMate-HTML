@@ -236,5 +236,26 @@
         </div>
       </div>
     </footer>
+    <script>
+      // Simple Intersection Observer to trigger animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      // Target all cards and section headers
+      document
+        .querySelectorAll(".card, .Why, .hero h1, .hero p")
+        .forEach((el) => {
+          el.classList.add("fade-in-up"); // Add the base class
+          observer.observe(el); // Start watching
+        });
+    </script>
   </body>
 </html>
