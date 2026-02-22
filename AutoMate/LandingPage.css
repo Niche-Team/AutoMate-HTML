@@ -1,3 +1,4 @@
+/* Global Variables ( Drop in global CSS or Tailwind config. No touch my color gradient oo!) */
 :root {
   --primary-color: #b87363;
   --secondary-color: #e85a10;
@@ -5,6 +6,7 @@
   --background-dark: #111827;
   --surface-light: #ffffff;
   --surface-dark: #1f2937;
+
   --primary-font: "Inter", sans-serif;
   --text-font: "Roboto Mono", monospace;
   --secondary-font: "Archivo";
@@ -18,7 +20,8 @@ body {
   background-color: var(--background-light);
   transition: all 0.5s ease-in-out;
 }
-/* NAVBAR STYLING */
+
+/* Navigation */
 nav {
   display: flex;
   padding: 40px 5%;
@@ -32,6 +35,7 @@ nav {
   position: sticky;
   backdrop-filter: blur(12px);
 }
+
 .Logo {
   display: flex;
   align-items: center;
@@ -48,6 +52,7 @@ nav {
   font-weight: 700;
   cursor: pointer;
 }
+
 .nav-links a {
   text-decoration: none;
   color: var(--surface-dark);
@@ -61,10 +66,14 @@ nav {
 .nav-links a:hover {
   color: var(--primary-color);
 }
+
 .buttons {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
+
+/* Login Button Animation */
 .Log {
   position: relative;
   display: inline-block;
@@ -81,7 +90,6 @@ nav {
   cursor: pointer;
   isolation: isolate;
 }
-
 .Log::after {
   content: "";
   position: absolute;
@@ -96,23 +104,19 @@ nav {
   transition: all 1.2s linear;
   z-index: -1;
 }
-
 .Log:hover {
   color: #fff;
   transition-duration: 1.2s;
 }
-
 .Log:hover::after {
   right: -60px;
   bottom: -92px;
   width: 256px;
   height: 256px;
 }
-
 .Log > .button-content {
   position: relative;
 }
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -121,22 +125,6 @@ nav {
     transform: rotate(360deg);
   }
 }
-
-/* .Log {
-  padding: 10px 20px;
-  background-color: var(--surface-dark);
-  color: var(--surface-light);
-  border: none;
-  border-radius: 30px;
-  font-family: var(--secondary-font);
-  font-size: 18px;
-  transition: background-color 0.5s ease-in-out;
-  cursor: pointer;
-}
-.Log:hover {
-  background-color: var(--primary-color);
-} */
-
 
 .Get {
   padding: 10px 20px;
@@ -150,131 +138,24 @@ nav {
   cursor: pointer;
   position: relative;
 }
-
 .Get:hover {
-  background: linear-gradient(to right, #b87363, #ea580c);;
+  background: linear-gradient(to right, #b87363, #ea580c);
   color: black;
-
 }
-/* HERO SECTION STYLING */
 
+/* Hero Section */
 .Hero {
   display: flex;
   padding: 0px 10%;
   gap: 50px;
 }
+
+/* Hero Left Box */
 .left-box {
   flex: 1;
   align-items: center;
-  /* width: 50%; */
   padding-top: 100px;
 }
-
-/* RIGHT BOX STYLING */
-.right-box {
-  flex: 1;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-  /* width: 50%; */
-}
-.image-container {
-  width: 746px;
-  min-height: 400px;
-  align-items: center;
-  justify-content: center;
-}
-.right-box img {
-  position: relative;
-  width: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0px 25px 25px rgba(0, 0, 0, 0.3));
-  transition: transform 0.5s ease-in-out;
-}
-.right-box img:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0px 35px 35px rgba(0, 0, 0, 0.4)) contrast(1.1);
-}
-.watermark {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--secondary-font);
-  font-size: 6rem;
-  font-weight: 900;
-  white-space: nowrap;
-  color: lightgrey;
-  opacity: 0.5;
-  z-index: -8;
-  pointer-events: none;
-}
-.float {
-  position: absolute;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 6px;
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(243, 244, 246, 1);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  /* width: 250px; */
-  white-space: nowrap;
-}
-.card-one {
-  top: 45%;
-  right: 0;
-}
-.card-two {
-  bottom: 16%;
-  left: 0;
-}
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 7px;
-  border-radius: 13px;
-}
-.box-one {
-  background-color: #dcfce7;
-}
-.box-one i {
-  color: #66c78a;
-}
-.box-two {
-  background-color: #dbeafe;
-}
-.box-two i {
-  color: #4278ee;
-}
-.text-group {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.text-group h3 {
-  font-family: var(--primary-font);
-  font-size: 14px;
-  font-weight: 700;
-  color: #111827;
-  margin: 0;
-  line-height: 1.2;
-}
-.text-group p {
-  font-family: var(--primary-font);
-  font-size: 12px;
-  font-weight: 400;
-  color: #6b7280;
-  margin: 0;
-  line-height: 1.2;
-}
-/* LEFT BOX STYLING */
-
 .hero-text-block {
   display: flex;
   flex-direction: column;
@@ -308,22 +189,31 @@ nav {
   margin: 0;
   line-height: 1.05;
 }
+
 .highlight-text {
-  position: relative;
   display: inline-block;
-  background: linear-gradient(to right, #b87363, #ea580c);
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+.anxiety-wrapper {
+  position: relative;
+  display: inline-block;
+}
 .swoosh-underline {
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -8px; 
   width: 100%;
-  height: 12px;
+  height: 20px; 
   color: var(--secondary-color);
-  opacity: 0.4;
+  opacity: 0.6;
+  pointer-events: none;
 }
 .hero-subtext {
   font-size: 18px;
@@ -333,22 +223,25 @@ nav {
   color: lightslategray;
   margin-bottom: 30px;
 }
+
+/* Ami Chat & Demo Buttons */
 .Ami-chat {
   padding: 16px 32px;
   font-family: var(--secondary-font);
   font-size: 18px;
   font-weight: 600;
   margin-right: 10px;
-background: linear-gradient(to right, #b87363, #ea580c);
+  background: linear-gradient(to right, #b87363, #ea580c);
   border: none;
   border-radius: 12px;
   width: 180px;
   color: white;
   box-shadow: 0px 14px 24px -6px rgba(214, 114, 82, 0.5);
   transition: background-color 1s ease;
+  cursor: pointer;
 }
 .Ami-chat:hover {
-background: linear-gradient(to right, #db6027, #f8ca29);
+  background: linear-gradient(to right, #db6027, #f8ca29);
 }
 .Demo {
   padding: 16px 32px;
@@ -361,25 +254,38 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   border-radius: 12px;
   width: 200px;
   transition: background-color 0.7s ease-out;
+  cursor: pointer;
 }
 .Demo:hover {
   background-color: rgb(226, 223, 223);
-}
-.buttons {
-  margin-bottom: 20px;
 }
 .Ami {
   font-family: var(--fancy-font);
   font-weight: 800;
   font-size: 30px;
 }
-.Stats p {
-  font-family: var(--primary-font);
-  font-size: 15px;
-  font-weight: 400;
-  color: #6b7280;
-  margin: 0;
-  line-height: 1.2;
+
+/* Hero Stats Row */
+
+.stat-row {
+  border-top: 1px solid gainsboro;
+  display: flex;
+  gap: 40px; /* Space between numbers and dividers */
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px; /* Pushes the stats down from the line above */
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #d1d5db; /* The light gray vertical line */
+}
+
+.Stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .Stats h3 {
   font-family: var(--primary-font);
@@ -389,22 +295,139 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   margin: 0;
   line-height: 1.2;
 }
-.stat-row {
-  border-top: 1px solid gainsboro;
-  display: flex;
-  gap: 50px;
+.Stats p {
+  font-family: var(--primary-font);
+  font-size: 15px;
+  font-weight: 400;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Fixed: The missing stat divider line */
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #e5e7eb;
+}
+
+/* Hero Right Box */
+.right-box {
+  flex: 1;
   align-items: center;
+  position: relative;
+  justify-content: center;
 }
-.Stats {
-  margin-top: 20px;
+.image-container {
+  width: 746px;
+  min-height: 400px;
+  align-items: center;
+  justify-content: center;
 }
-/* TRUST FEATURES */
+.right-box img {
+  position: relative;
+  width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0px 25px 25px rgba(0, 0, 0, 0.3));
+  transition: transform 0.5s ease-in-out;
+}
+.right-box img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0px 35px 35px rgba(0, 0, 0, 0.4)) contrast(1.1);
+}
+.watermark {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--secondary-font);
+  font-size: 6rem;
+  font-weight: 900;
+  white-space: nowrap;
+  color: lightgrey;
+  opacity: 0.5;
+  z-index: -8;
+  pointer-events: none;
+}
+
+/* Glassmorphism Floats */
+.float {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 6px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(243, 244, 246, 1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  font-family: var(--primary-font); 
+}
+.card-one {
+  top: 45%;
+  right: 0;
+}
+.card-two {
+  bottom: 16%;
+  left: 0;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 7px;
+  border-radius: 13px;
+}
+.box-one {
+  background-color: #dcfce7;
+}
+.box-one i {
+  color: #66c78a;
+}
+.box-two {
+  background-color: #dbeafe;
+}
+.box-two i {
+  color: #4278ee;
+}
+
+.text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(
+    --primary-font
+  ); 
+}
+.text-group h3 {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+.text-group p {
+  font-family: var(--primary-font);
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Trust Features Strip */
 .trust-features {
   background-color: var(--surface-light);
   display: flex;
   padding: 50px 10%;
   justify-content: space-between;
   gap: 10px;
+  border-bottom: 1px solid gainsboro;
 }
 .Trust-cards {
   display: flex;
@@ -420,7 +443,7 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   color: #c48e80;
   font-size: 18px;
 }
-.Trust-cards h4 {
+.text-box h4 {
   font-family: var(--primary-font);
   font-size: 15px;
   font-weight: 700;
@@ -428,7 +451,7 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   margin: 0;
   line-height: 1.2;
 }
-.Trust-cards p {
+.text-box p {
   font-family: var(--primary-font);
   font-size: 12px;
   font-weight: 400;
@@ -437,31 +460,26 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   line-height: 1.2;
   max-width: 200px;
 }
-/* =========================================
-   THE TOKUNBO TRAP (TECH LABELING SECTION)
-   ========================================= */
 
+/* The Tokunbo Trap (HUD Effect) */
 .tokunbo-trap {
   display: flex;
   padding: 80px 10%;
   gap: 60px;
   align-items: center;
-  background-color: var(--surface-light); /* Pure white background to contrast the gray */
 }
 
-/* --- Left Side: The Image & Tech Labels --- */
+/* Trap Left Box & HUD Labels */
 .trap-left-box {
   flex: 1;
   display: flex;
   justify-content: center;
 }
-
 .tech-image-container {
   position: relative;
   width: 100%;
-  max-width: 500px; /* Keeps the car from getting too massive */
+  max-width: 500px;
 }
-
 .trap-car-img {
   width: 100%;
   object-fit: contain;
@@ -469,20 +487,20 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   z-index: 2;
 }
 
-/* The Wrapper for each Label + Line + Dot */
 .tech-label {
   position: absolute;
   display: flex;
   align-items: center;
   z-index: 10;
+  font-family: var(
+    --primary-font
+  );
 }
-
-/* The White Warning Pill */
 .label-content {
   background-color: var(--surface-light);
   padding: 10px 16px;
   border-radius: 8px;
-  border: 1px solid #fecaca; /* Very light red border */
+  border: 1px solid #fecaca;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
@@ -493,25 +511,22 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   color: var(--surface-dark);
   white-space: nowrap;
 }
-
-/* Warning Icon inside the pill */
 .label-content i {
-  color: #ef4444; /* Standard danger red */
+  color: #ef4444;
   font-size: 14px;
 }
-
-/* The Targeting Line */
 .tech-line {
   height: 2px;
-  width: 40px; /* Default length */
+  width: 40px;
   background-color: #ef4444;
   opacity: 0.7;
 }
-
-.line-long { width: 80px; }
-.line-medium { width: 60px; }
-
-/* The Pulsing Dot on the Car */
+.line-long {
+  width: 80px;
+}
+.line-medium {
+  width: 60px;
+}
 .tech-dot {
   width: 8px;
   height: 8px;
@@ -519,43 +534,42 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   border-radius: 50%;
   position: relative;
 }
-
-/* Pulse Animation for the Dot */
 .tech-dot::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: -6px;
   border-radius: 50%;
   border: 2px solid #ef4444;
   animation: radar-pulse 2s infinite ease-out;
 }
-
 @keyframes radar-pulse {
-  0% { transform: scale(0.5); opacity: 1; }
-  100% { transform: scale(2.5); opacity: 0; }
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
 
-/* Positioning the Labels (Adjust these % if you change the car image) */
 .label-engine {
   top: 35%;
-  left: -15%; /* Pulls the text outside the image box */
+  left: -15%;
 }
-
 .label-flood {
   bottom: 25%;
   left: -25%;
 }
-
 .label-odometer {
   top: 45%;
   right: -25%;
 }
 
-/* --- Right Side: The Text Content --- */
+/* Trap Right Box */
 .trap-right-box {
   flex: 1;
 }
-
 .trap-right-box h1 {
   font-family: var(--primary-font);
   font-size: 42px;
@@ -564,7 +578,6 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   margin-top: 0;
   margin-bottom: 24px;
 }
-
 .trap-desc {
   font-family: var(--primary-font);
   font-size: 16px;
@@ -572,25 +585,21 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   line-height: 1.6;
   margin-bottom: 20px;
 }
-
 .trap-list {
   margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-
 .trap-item {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
 .trap-item i {
   color: #ef4444;
   font-size: 18px;
 }
-
 .trap-item p {
   font-family: var(--primary-font);
   font-size: 15px;
@@ -599,41 +608,36 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   margin: 0;
 }
 
-/* =========================================
-   SOLID DRIVE PROMISE SECTION
-   ========================================= */
-
+/* Solid Drive Promise Section */
 .solid-drive-section {
   display: flex;
   padding: 80px 10%;
   gap: 60px;
   align-items: center;
-  background-color: var(--background-light); /* Keeps the subtle off-white background */
+  background-color: var(--background-light);
 }
 
-/* --- Left Side: Text Content --- */
+/* Solid Drive Left Box */
 .sd-left-box {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-
 .sd-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background-color: #e0e7ff; /* Very light blue for trust */
+  background-color: #e0e7ff;
   border-radius: 50px;
   width: max-content;
   font-family: var(--primary-font);
   font-size: 11px;
   font-weight: 800;
-  color: #4338ca; /* Deep Trust Blue */
+  color: #4338ca;
   letter-spacing: 1px;
 }
-
 .sd-heading {
   font-family: var(--primary-font);
   font-size: 56px;
@@ -642,15 +646,16 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   margin: 0;
   line-height: 1.1;
 }
-
-/* Re-using your highlight-text gradient for "Solid Drive" */
 .sd-heading .highlight-text {
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-
 .sd-subtext {
   font-family: var(--primary-font);
   font-size: 18px;
@@ -660,13 +665,12 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   max-width: 550px;
 }
 
-/* Button Formatting */
+/* Solid Drive Action Buttons */
 .sd-buttons {
   display: flex;
   gap: 16px;
   margin-top: 10px;
 }
-
 .btn-dark {
   background-color: var(--surface-dark);
   color: var(--surface-light);
@@ -682,12 +686,10 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   gap: 10px;
   transition: all 0.3s ease;
 }
-
 .btn-dark:hover {
   background-color: #000000;
   transform: translateY(-2px);
 }
-
 .btn-outline {
   background-color: transparent;
   color: var(--surface-dark);
@@ -700,34 +702,32 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .btn-outline:hover {
   background-color: #f3f4f6;
 }
 
-/* Social Proof (Overlapping Avatars) */
+/* Solid Drive Social Proof */
 .sd-social-proof {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-top: 20px;
 }
-
 .avatars {
   display: flex;
   align-items: center;
 }
-
-.avatars img, .avatar-count {
+.avatars img,
+.avatar-count {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   border: 2px solid var(--surface-light);
-  margin-left: -12px; /* Pulls them together to overlap */
+  margin-left: -12px;
 }
-
-.avatars img:first-child { margin-left: 0; }
-
+.avatars img:first-child {
+  margin-left: 0;
+}
 .avatar-count {
   background-color: #d1d5db;
   display: flex;
@@ -739,7 +739,6 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   color: var(--surface-dark);
   z-index: 5;
 }
-
 .sd-social-proof p {
   font-family: var(--primary-font);
   font-size: 13px;
@@ -747,39 +746,34 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   margin: 0;
 }
 
-/* --- Right Side: The CSS Report Card --- */
+/* Solid Drive CSS Report Card */
 .sd-right-box {
   flex: 1;
   display: flex;
   justify-content: center;
   position: relative;
 }
-
-/* Creates a subtle background shadow to lift the card */
 .sd-right-box::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 400px;
   height: 350px;
-  background-color: #dbeafe; /* Very soft blue shadow */
+  background-color: #dbeafe;
   border-radius: 24px;
   top: 30px;
   right: 10%;
   z-index: 0;
 }
-
 .css-report-card {
   width: 100%;
   max-width: 480px;
   background-color: var(--surface-light);
   border-radius: 20px;
-  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
   z-index: 2;
 }
-
-/* Report Header Graphic */
 .crc-header {
   height: 160px;
   background-color: #f3f4f6;
@@ -788,14 +782,14 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #e5e7eb;
+  overflow: hidden;
 }
-
-.crc-car-icon {
-  font-size: 100px;
-  color: #d1d5db;
-  opacity: 0.5;
+.crc-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-
 .crc-passed-badge {
   position: absolute;
   top: 16px;
@@ -810,20 +804,17 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   display: flex;
   align-items: center;
   gap: 6px;
+  z-index: 10;
 }
-
-/* Report Body Data */
 .crc-body {
   padding: 24px;
 }
-
 .crc-title-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 4px;
 }
-
 .crc-title-row h2 {
   font-family: var(--primary-font);
   font-size: 20px;
@@ -831,31 +822,25 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   color: var(--surface-dark);
   margin: 0;
 }
-
 .crc-title-row .crc-price {
-  color: var(--primary-color); /* Kept on theme using your copper color */
+  color: var(--primary-color);
 }
-
 .crc-subtitle-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
 }
-
 .crc-subtitle-row p {
   font-family: var(--primary-font);
   font-size: 13px;
   color: #6b7280;
   margin: 0;
 }
-
 .crc-negotiable {
   color: #9ca3af !important;
   font-size: 12px !important;
 }
-
-/* The Bottom Stat Pills */
 .crc-stats-row {
   display: flex;
   justify-content: space-between;
@@ -865,7 +850,6 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   border-radius: 12px;
   border: 1px solid #f3f4f6;
 }
-
 .crc-stat {
   display: flex;
   flex-direction: column;
@@ -876,38 +860,12 @@ background: linear-gradient(to right, #db6027, #f8ca29);
   font-weight: 600;
   color: #4b5563;
 }
-
 .crc-stat i {
   color: #9ca3af;
   font-size: 16px;
 }
 
-/* --- Mod for the Real Car Image in the Report Card --- */
-
-.crc-header {
-  /* You might already have this, but make sure overflow is hidden 
-     so the image doesn't bleed over the rounded corners of the card */
-  overflow: hidden; 
-}
-
-.crc-header img {
-  width: 100%;
-  height: 100%;
-  /* This is the magic property. It forces the image to fill the 160px height 
-     without squishing or stretching the Mercedes */
-  object-fit: cover; 
-  object-position: center; /* Keeps the car centered in the crop */
-}
-
-.crc-passed-badge {
-  z-index: 10; /* Ensures your green "Passed" badge stays floating ON TOP of the photo */
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
+/* Footer */
 footer {
   position: relative;
   background-color: var(--surface-dark);
@@ -915,8 +873,6 @@ footer {
   padding: 100px 10% 40px;
   overflow: hidden;
 }
-
-/* SVG background layer */
 footer::before {
   content: "";
   position: absolute;
@@ -925,41 +881,31 @@ footer::before {
   opacity: 0.1;
   z-index: 0;
 }
-
-/* Content wrapper */
 .footer-content {
   position: relative;
   z-index: 2;
 }
-
-/* Top section layout */
 .bios {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 60px;
   margin-bottom: 60px;
 }
-
-/* Logo styling */
 .footer-logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .footer-logo i {
   font-size: 28px;
   color: var(--primary-color);
 }
-
 .footer-logo h1 {
   font-family: var(--primary-font);
   font-size: 22px;
   font-weight: 700;
   margin: 0;
 }
-
-/* Company description */
 .Text p {
   font-family: var(--primary-font);
   font-size: 14px;
@@ -968,13 +914,10 @@ footer::before {
   margin: 20px 0;
   max-width: 320px;
 }
-
-/* Social icons */
 .social-icons {
   display: flex;
   gap: 14px;
 }
-
 .social-icons a {
   width: 36px;
   height: 36px;
@@ -985,15 +928,17 @@ footer::before {
   justify-content: center;
   color: #d1d5db;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
-
 .social-icons a:hover {
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   transform: translateY(-3px);
 }
-
-/* Links section */
 .Link h2 {
   font-family: var(--primary-font);
   font-size: 15px;
@@ -1001,7 +946,6 @@ footer::before {
   margin-bottom: 18px;
   color: white;
 }
-
 .Link a {
   display: block;
   font-family: var(--primary-font);
@@ -1011,12 +955,9 @@ footer::before {
   margin-bottom: 10px;
   transition: color 0.3s ease;
 }
-
 .Link a:hover {
   color: var(--primary-color);
 }
-
-/* Bottom bar */
 .foot {
   border-top: 1px solid #374151;
   padding-top: 20px;
@@ -1027,14 +968,13 @@ footer::before {
   font-size: 13px;
   color: #9ca3af;
 }
-
 .legal-links a {
   color: #9ca3af;
   text-decoration: none;
   margin-left: 20px;
   transition: color 0.3s ease;
 }
-
 .legal-links a:hover {
   color: var(--primary-color);
 }
+/* And there you have it boys...evidence of my genius */
