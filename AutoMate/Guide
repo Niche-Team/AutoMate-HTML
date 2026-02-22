@@ -1,0 +1,140 @@
+Here is your complete coding cheat sheet. It contains every piece of text, layout structure, and implied styling from the mockup so you can code straight through without checking the images.
+
+### 🎨 1. Global Styles & Colors (Approximations)
+
+- **Background:** White (`#FFFFFF`) for the main page, very light gray/off-white for the features strip.
+- **Primary Text (Dark):** Trust Navy / Very Dark Slate.
+- **Accent Color:** Heritage Copper / Orange (used for "Car Buying Anxiety", primary buttons, tags).
+- **Success Color:** Verified Green (used for the checkmark and chat online dot).
+- **Typography:** Sans-serif (likely Inter or Roboto). Headings are bold/black weight, body text is regular.
+
+---
+
+### 🧱 2. Navigation Bar (Top)
+
+**Layout:** Flexbox, space-between, vertically aligned center.
+
+- **Logo (Left):** Red Car Icon + "AutoMate" (Bold).
+- **Nav Links (Center-ish):**
+- Buy a Car
+- Sell Your Car
+- Financing
+- About Us
+
+- **Actions (Right):**
+- Search Icon (Magnifying glass)
+- Button: `[ Sign In ]` (Dark Navy background, White text, rounded edges).
+
+---
+
+### 💥 3. Hero Section
+
+**Layout:** Two main columns (Grid or Flex `w-1/2`).
+
+#### Left Column (Text & CTA)
+
+- **Top Badge:** `[Orange Dot] NIGERIA'S PREMIER MARKETPLACE` (Light orange background, uppercase, tiny font).
+- **H1 Headline:**
+- "The End of" (Dark Navy)
+- "Car Buying" (Copper/Orange)
+- "Anxiety" (Copper/Orange)
+
+- **Sub-headline (Body text):**
+  "Verified sellers, comprehensive inspections, and transparent pricing. Experience the safest way to buy a used vehicle in Lagos and beyond."
+- **Buttons (Flex row, gap):**
+- Primary: `[ Browse Inventory ]` (Solid Copper/Orange background, White text).
+- Secondary: `[ (Play Icon) How it works ]` (White background, light gray border, Dark text).
+
+- **Stats (Flex row, space-between, bottom of left column):**
+- **15k+** (Subtext: Cars Sold)
+- **98%** (Subtext: Satisfaction)
+- **24/7** (Subtext: Support)
+
+#### Right Column (Image & Overlays)
+
+- **Main Image:** Orange Lexus SUV on a dark, studio-lit background.
+- **Floating Card 1 (Top Right):**
+- Icon: Green checkmark in a circle.
+- Title: "Verified Inspection" (Bold).
+- Subtext: "Passed 200-point check" (Light gray).
+
+- **Floating Card 2 (Bottom Left):**
+- Icon: Blue clock/history icon.
+- Title: "Full History" (Bold).
+- Subtext: "No accidents reported" (Light gray).
+
+- **Chatbot Widget (Bottom Right, overlapping image):**
+- Badge: `[Green Dot] AMI V.1 ONLINE` (Uppercase, tiny font).
+- Text: "Hi! I'm Ami, your automotive expert. Need help finding a specific model or checking financing rates?"
+- Floating Action Button: Circular Copper/Orange button with a white chat/basket icon.
+
+---
+
+### 🛠️ 4. Trust/Features Strip (Below Hero)
+
+**Layout:** 4-column grid (`grid-cols-4`), light background. Each item has an icon on the left, text on the right.
+
+1. **Icon:** Gavel/No-fees symbol
+15k+ Cars Sold
+- Title: **No Hidden Fees**
+- Subtext: What you see is what you pay
+98%Satisfaction
+2. **Icon:** Circular arrow with a clock inside
+24/7Support
+- Title: **7-Day Return**
+- Subtext: Change your mind easily
+
+3. **Icon:** Certificate / Ribbon
+
+- Title: **Free Warranty**
+- Subtext: 3 months coverage included
+
+4. **Icon:** Delivery Truck
+
+- Title: **Home Delivery**
+- Subtext: We bring the car to you
+
+---
+
+### 🦶 5. Footer
+
+**Layout:** 4 main columns for links, plus a bottom border row for copyright.
+
+#### Column 1: Brand
+
+- Logo: Red Car Icon + "AutoMate"
+- Body Text: "Nigeria's most trusted online marketplace for buying and selling quality used cars. We remove the hassle and risk from automotive transactions."
+- Icons: Globe, '@' symbol, RSS/Wifi symbol (Light gray).
+
+#### Column 2: Buying
+
+- **Heading:** Buying
+- Browse Inventory
+- Car Financing
+- Vehicle History Reports
+- Insurance Options
+
+#### Column 3: Selling
+
+- **Heading:** Selling
+- Sell Your Car
+- Value Your Car
+- Inspection Locations
+- Dealer Partnerships
+
+#### Column 4: Company
+
+- **Heading:** Company
+- About Us
+- Careers
+- Press
+- Contact Support
+
+#### Bottom Bar (Border top)
+
+- **Left:** "© 2024 AutoMate Nigeria Ltd. All rights reserved."
+- **Right:** "Privacy Policy" | "Terms of Service"
+
+---
+
+Would you like me to generate the foundational HTML/Tailwind skeleton for any of these specific sections so you can just drop the text in?

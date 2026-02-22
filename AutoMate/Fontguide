@@ -1,0 +1,59 @@
+Here is the typography breakdown for the AutoMate template.
+
+The design uses a highly unified and modern approach. Instead of loading multiple different font families, it relies on a single typeface with varying weights and sizes to create a clean visual hierarchy, plus one font specifically for icons.
+
+### 1. Primary Text Font
+
+* **Font Family:** **Inter** (with standard `sans-serif` as a fallback).
+* **Source:** Google Fonts (`https://fonts.googleapis.com/css2?family=Inter...`).
+* **Weights Loaded:** Light (300), Regular (400), Medium (500), SemiBold (600), and Bold (700).
+* **Where it is used:** Every single piece of readable text on the page. The Tailwind configuration explicitly maps both `font-sans` and `font-display` strictly to "Inter".
+
+### 2. Iconography Font
+
+* **Font Family:** **Material Symbols Outlined** (by Google).
+* **Where it is used:** Every icon on the page. This includes:
+* The main car logo (`directions_car`)
+* The search button (`search`)
+* The video play button (`play_circle`)
+* The floating tags on the car (`verified`, `history`)
+* The Trust Strip icons (`gavel`, `published_with_changes`, `engineering`, `local_shipping`)
+* The footer social/contact icons (`public`, `alternate_email`, `rss_feed`)
+* The chatbot trigger button (`smart_toy`)
+
+
+
+---
+
+### 📏 How "Inter" is Applied Across the Page (The Hierarchy)
+
+Here is exactly how the Inter font is sized and weighted across the different elements to create contrast:
+
+**The Hero Section**
+
+* **Main Headline ("The End of Car Buying Anxiety"):** Bold (700). Massive sizing (`text-5xl` to `text-7xl` depending on screen size).
+* **Top Orange Badge ("Nigeria's Premier Marketplace"):** SemiBold (600), extra small (`text-xs`), uppercase, and tracking wide (letter-spacing).
+* **Hero Sub-headline ("Verified sellers..."):** Regular (400), large sizing (`text-lg` to `text-xl`), with relaxed line height.
+* **Stat Numbers ("15k+", "98%", "24/7"):** Bold (700), large size (`text-3xl`).
+* **Stat Labels ("Cars Sold"):** Regular (400), small size (`text-sm`).
+
+**Navigation & Buttons**
+
+* **Site Logo Text ("AutoMate"):** Bold (700), extra-large (`text-2xl`), tight letter spacing.
+* **Navigation Links ("Buy a Car", etc.):** Medium (500), small size (`text-sm`).
+* **Main Action Buttons ("Browse Inventory", "Sign In"):** Medium (500). Size varies from `text-sm` for the nav button to `text-base` for the hero buttons.
+
+**Image Overlays & Trust Strip**
+
+* **Floating Car Tags ("Verified Inspection", "Full History"):** The titles are Bold (700) and extra small (`text-xs`). The subtext below them is incredibly small (`text-[10px]`).
+* **Trust Strip Titles ("No Hidden Fees"):** Bold (700), small size (`text-sm`).
+* **Trust Strip Subtext:** Regular (400), extra small (`text-xs`).
+
+**Footer & Chatbot**
+
+* **Footer Column Headers ("Buying", "Selling"):** Bold (700), standard size.
+* **Footer Links & Paragraphs:** Regular (400), small size (`text-sm`).
+* **Copyright & Legal:** Regular (400), small size (`text-sm`).
+* **Chatbot "Ami V.1 Online" Badge:** Bold (700), extra small (`text-xs`), uppercase, wider tracking.
+
+Would you like me to map out the exact Tailwind color palette (the specific hex codes for your copper, navy, and backgrounds) used in this code next?
