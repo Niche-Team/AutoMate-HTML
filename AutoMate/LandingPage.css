@@ -1,3 +1,9 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 /* Global Variables ( Drop in global CSS or Tailwind config. No touch my color gradient oo!) */
 :root {
   --primary-color: #b87363;
@@ -52,7 +58,12 @@ nav {
   font-weight: 700;
   cursor: pointer;
 }
-
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .nav-links a {
   text-decoration: none;
   color: var(--surface-dark);
@@ -208,9 +219,9 @@ nav {
 .swoosh-underline {
   position: absolute;
   left: 0;
-  bottom: -8px; 
+  bottom: -8px;
   width: 100%;
-  height: 20px; 
+  height: 20px;
   color: var(--secondary-color);
   opacity: 0.6;
   pointer-events: none;
@@ -319,10 +330,10 @@ nav {
   justify-content: center;
 }
 .image-container {
-  width: 746px;
-  min-height: 400px;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 .right-box img {
   position: relative;
@@ -365,7 +376,7 @@ nav {
   border: 1px solid rgba(243, 244, 246, 1);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
-  font-family: var(--primary-font); 
+  font-family: var(--primary-font);
 }
 .card-one {
   top: 45%;
@@ -399,9 +410,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  font-family: var(
-    --primary-font
-  ); 
+  font-family: var(--primary-font);
 }
 .text-group h3 {
   font-family: var(--primary-font);
@@ -479,6 +488,7 @@ nav {
   position: relative;
   width: 100%;
   max-width: 500px;
+  overflow: hidden;
 }
 .trap-car-img {
   width: 100%;
@@ -492,9 +502,7 @@ nav {
   display: flex;
   align-items: center;
   z-index: 10;
-  font-family: var(
-    --primary-font
-  );
+  font-family: var(--primary-font);
 }
 .label-content {
   background-color: var(--surface-light);
@@ -977,4 +985,289 @@ footer::before {
 .legal-links a:hover {
   color: var(--primary-color);
 }
+
+/* Responsive Design  */
+body {
+  overflow-x: hidden;
+}
+.Hero,
+.trust-features,
+.tokunbo-trap,
+.solid-drive-section,
+footer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* Tablet & Small Laptops (Max Width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .Hero,
+  .trust-features,
+  .tokunbo-trap,
+  .solid-drive-section,
+  footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero-heading {
+    font-size: 56px;
+  }
+
+  .sd-heading {
+    font-size: 48px;
+  }
+
+  .image-container {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .trust-features {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .Trust-cards {
+    width: 45%;
+    margin-bottom: 24px;
+  }
+
+  .bios {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* Mobile & Tablet (Max Width: 768px) */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 20px 5%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .Actions .Log {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .Actions .Get {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .Hero {
+    flex-direction: column;
+    padding-top: 40px;
+    gap: 40px;
+  }
+
+  .left-box {
+    padding-top: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text-block {
+    align-items: center;
+  }
+
+  .hero-heading {
+    font-size: 46px;
+  }
+
+  .hero-subtext {
+    max-width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .Ami-chat,
+  .Demo {
+    width: 100%;
+    margin: 0;
+  }
+
+  .stat-row {
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .stat-divider {
+    height: 30px;
+  }
+
+  .card-one {
+    top: -5%;
+    right: 5%;
+    transform: scale(0.85);
+  }
+
+  .card-two {
+    bottom: -5%;
+    left: 5%;
+    transform: scale(0.85);
+  }
+
+  .Trust-cards {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .tokunbo-trap {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .trap-left-box {
+    order: -1;
+  }
+
+  .trap-right-box h1 {
+    font-size: 36px;
+  }
+
+  .trap-list {
+    align-items: center;
+  }
+
+  .label-engine {
+    left: -5%;
+    top: 20%;
+    transform: scale(0.8);
+  }
+  .label-flood {
+    left: -10%;
+    bottom: 10%;
+    transform: scale(0.8);
+  }
+  .label-odometer {
+    right: -5%;
+    transform: scale(0.8);
+  }
+
+  .solid-drive-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sd-left-box {
+    align-items: center;
+  }
+
+  .sd-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sd-buttons button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sd-right-box::before {
+    display: none;
+  }
+
+  .bios {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .Text p {
+    margin: 20px auto;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .foot {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .legal-links a {
+    margin: 0 10px;
+  }
+}
+
+/* Small Mobile (Max Width: 480px) */
+@media screen and (max-width: 480px) {
+  .hero-heading {
+    font-size: 38px;
+  }
+
+  .sd-heading {
+    font-size: 36px;
+  }
+
+  .trap-right-box h1 {
+    font-size: 32px;
+  }
+
+  .crc-header {
+    height: 120px;
+  }
+
+  .crc-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .crc-subtitle-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .crc-stats-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .crc-stat {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .stat-row {
+    gap: 16px;
+  }
+
+  .Stats h3 {
+    font-size: 20px;
+  }
+
+  .label-engine {
+    left: 0%;
+    transform: scale(0.7);
+  }
+  .label-flood {
+    left: 0%;
+    transform: scale(0.7);
+  }
+  .label-odometer {
+    right: 0%;
+    transform: scale(0.7);
+  }
+}
+
+
+
 /* And there you have it boys...evidence of my genius */
