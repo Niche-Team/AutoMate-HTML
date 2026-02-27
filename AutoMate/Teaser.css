@@ -1,0 +1,346 @@
+:root {
+        /* AutoMate Core Theme - Refined for High-End Contrast */
+        --bg-dark: #000000;
+        --copper-main: #b87363;
+        --copper-hover: #a86555;
+        --copper-soft: rgba(184, 115, 99, 0.15);
+
+        --surface-base: #ffffff;
+        --text-muted: #64748b; /* Sharper hierarchy */
+        --text-body: #94a3b8;
+
+        --font-main: "Inter", -apple-system, sans-serif;
+        --font-mono: "IBM Plex Mono", monospace;
+        --font-heading: "Archivo", sans-serif;
+
+        --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh; /* Allows expansion if screen is tiny */
+        background-color: var(--bg-dark);
+        color: var(--surface-base);
+        font-family: var(--font-main);
+        overflow-x: hidden;
+        overflow-y: auto; /* Allows scrolling only if a mobile keyboard squishes the screen */
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* 2D Fluid Canvas */
+      #fluid-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0;
+        animation: fadeIn 2s forwards 0.5s;
+      }
+
+      .main {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4vh 20px 80px 20px; /* 80px bottom creates a permanent safe-zone for the footer */
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
+
+      /* Brand Eyebrow */
+      .pre-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 2vh;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 1.5s var(--ease-apple), transform 1.5s var(--ease-apple);
+      }
+
+      .pre-heading.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .brand-name {
+        font-size: clamp(1.1rem, 2vw, 1.4rem); /* Scaled down */
+        font-weight: 800;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--copper-main);
+        font-family: var(--font-heading);
+      }
+
+      .tagline {
+        font-size: clamp(0.5rem, 0.7vw, 0.6rem); /* Scaled down */
+        font-weight: 500;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        text-align: center;
+      }
+
+      /* Sleek Heading */
+      h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem); /* Scaled down for focus */
+        font-weight: 300;
+        text-align: center;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        margin: 0 0 3vh 0;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: smoothFadeUp 1.2s var(--ease-apple) forwards 0.2s;
+      }
+
+      h1 span.hook {
+        font-weight: 800;
+        color: var(--copper-main);
+        text-shadow: 0 0 35px rgba(184, 115, 99, 0.25);
+      }
+
+      /* 5-Car Phalanx V-Formation */
+      .phalanx-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        max-width: 850px; /* Constrained for precision */
+        height: 25vh; /* Scaled down */
+        margin-bottom: 3vh;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: smoothFadeUp 1.2s var(--ease-apple) forwards 0.4s;
+        transition: transform 0.8s var(--ease-apple);
+      }
+
+      .phalanx-wrapper:hover {
+        transform: translateY(-8px);
+      }
+
+      .phalanx-car {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        object-fit: contain;
+        mix-blend-mode: normal;
+        transition: transform 0.8s var(--ease-apple), filter 0.8s var(--ease-apple), opacity 0.8s var(--ease-apple);
+        filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.8));
+      }
+
+      .car-center { width: 34%; z-index: 5; transform: translate(-50%, -50%); }
+      .car-inner-left { width: 28%; transform: translate(-125%, -50%) scale(0.92); z-index: 4; }
+      .car-inner-right { width: 28%; transform: translate(25%, -50%) scale(0.92); z-index: 4; }
+      .car-outer-left { width: 22%; transform: translate(-205%, -50%) scale(0.82); z-index: 3; opacity: 0.4; }
+      .car-outer-right { width: 22%; transform: translate(105%, -50%) scale(0.82); z-index: 3; opacity: 0.4; }
+
+      /* High-Contrast Fleet Hover */
+      .phalanx-wrapper:hover .phalanx-car {
+        opacity: 0.9;
+        filter: brightness(1.05) contrast(1.1) drop-shadow(0 0 40px var(--copper-soft));
+      }
+
+      .phalanx-wrapper:hover .car-center {
+        opacity: 1;
+        filter: brightness(1.1) contrast(1.15) drop-shadow(0 0 50px rgba(184, 115, 99, 0.2));
+      }
+
+      /* Typewriter Text */
+      .text-container {
+        position: relative;
+        width: 100%;
+        max-width: 550px; /* Tighter line length */
+        min-height: 8vh;
+        margin: 1vh auto 2vh auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .text {
+        font-size: clamp(0.8rem, 1vw, 0.9rem); /* Refined sizing */
+        font-weight: 400;
+        font-family: var(--font-mono);
+        text-align: center;
+        letter-spacing: -0.01em;
+        line-height: 1.8;
+        color: var(--text-body);
+        margin: 0;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 6px;
+        height: 1.1em;
+        background-color: var(--copper-main);
+        vertical-align: middle;
+        margin-left: 4px;
+        animation: blink 1s step-end infinite;
+      }
+
+      .idle-message {
+        margin-top: 1.5vh;
+        font-size: 0.65rem;
+        color: var(--copper-main);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-family: var(--font-main);
+        opacity: 0;
+        white-space: nowrap;
+        transition: opacity 1.5s var(--ease-apple);
+      }
+
+      .idle-message.visible { opacity: 0.7; }
+
+      /* Morphing Button */
+      .input-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        opacity: 0;
+        transform: translateY(15px);
+        animation: smoothFadeUp 1.2s var(--ease-apple) forwards 0.8s;
+      }
+
+      .input-wrapper p {
+        font-weight: 600;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        color: var(--text-muted);
+        margin: 0;
+        font-family: var(--font-main);
+      }
+
+      .morph-container {
+        position: relative;
+        width: 220px; /* Slimmer footprint */
+        height: 46px;
+        transition: width 0.7s var(--ease-apple);
+      }
+
+      .morph-container.morphed {
+        width: 380px;
+        max-width: 85vw;
+      }
+
+      #toggle-btn {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        color: var(--copper-main);
+        border: 1px solid rgba(184, 115, 99, 0.3);
+        border-radius: 50px;
+        font-family: var(--font-main);
+        font-weight: 600;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.4s var(--ease-apple);
+        z-index: 2;
+      }
+
+      #toggle-btn:hover {
+        background: var(--copper-main);
+        color: var(--surface-base);
+        box-shadow: 0 10px 30px rgba(184, 115, 99, 0.2);
+      }
+
+      /* KILLS THE BUTTON ON CLICK */
+      .morph-container.morphed #toggle-btn {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none; 
+        transform: scale(0.9);
+      }
+
+      .input-group {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        opacity: 0; visibility: hidden;
+        transition: all 0.5s var(--ease-apple) 0.1s;
+        transform: scale(0.98);
+        display: flex;
+        z-index: 1;
+      }
+
+      .morph-container.morphed .input-group {
+        opacity: 1; visibility: visible; transform: scale(1);
+      }
+
+      #username-input {
+        width: 100%; height: 100%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        padding: 0 60px 0 25px;
+        font-family: var(--font-main);
+        font-size: 0.9rem;
+        color: var(--surface-base);
+        outline: none;
+        
+        /* STRIPS FONT DECORATIONS */
+        text-transform: none !important;
+        letter-spacing: normal !important;
+        font-weight: 400 !important;
+      }
+
+      #username-input::placeholder {
+        text-transform: none;
+        letter-spacing: normal;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      .submit-arrow {
+        position: absolute;
+        right: 4px; top: 4px;
+        height: 38px; width: 38px;
+        border-radius: 50%;
+        background: var(--copper-main);
+        color: var(--surface-base);
+        border: none;
+        display: flex; align-items: center; justify-content: center;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+      .submit-arrow:hover { transform: scale(1.05); background: var(--copper-hover); }
+
+      /* Footer Note - Absolute Position fixes overlap */
+      .footer-note {
+        position: absolute; 
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.55rem;
+        color: rgb(187, 187, 187);
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: fadeIn 2s forwards 3s;
+        z-index: 1;
+      }
+
+      @keyframes smoothFadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes fadeIn { to { opacity: 1; } }
+      @keyframes blink { 50% { opacity: 0; } }
+
+      @media (max-width: 768px) {
+        h1 { font-size: 1.8rem; }
+        .phalanx-wrapper { height: 20vh; }
+        .morph-container.morphed { width: 100%; }
+      }

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoMate | The Safe List</title>
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="Teaser.css" />
+
+    <!-- Google Fonts: Archivo, Inter & IBM Plex Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;800&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 2D Fluid Waves (Right side pulsing planet) -->
+    <canvas id="fluid-canvas"></canvas>
+
+    <main id="main" class="main">
+      <!-- Delayed Pre-Heading -->
+      <div class="pre-heading" id="pre-heading">
+        <span class="brand-name">AutoMate</span>
+        <span class="tagline"
+          >Nigeria's First Trust Engineered Auto Marketplace</span
+        >
+      </div>
+
+      <h1>
+        Buying a car shouldn't <br />be a
+        <span class="hook">leap of faith.</span>
+      </h1>
+
+      <!-- The 5-Car Phalanx -->
+      <div class="phalanx-wrapper">
+        <!-- Outer Left: Lexus -->
+        <img
+          src="assets/Lexus.png"
+          class="phalanx-car car-outer-left"
+          alt="Lexus"
+        />
+        <!-- Inner Left: Accord -->
+        <img
+          src="assets/Accord-II.png"
+          class="phalanx-car car-inner-left"
+          alt="Accord"
+        />
+        <!-- Center Lead: GLE -->
+        <img src="assets/Gle.png" class="phalanx-car car-center" alt="GLE" />
+        <!-- Inner Right: Corolla -->
+        <img
+          src="assets/Corrola.png"
+          class="phalanx-car car-inner-right"
+          alt="Corolla"
+        />
+        <!-- Outer Right: Sienna -->
+        <img
+          src="assets/sienna.png"
+          class="phalanx-car car-outer-right"
+          alt="Sienna"
+        />
+      </div>
+
+      <!-- Centered Typewriter (IBM Plex Mono) with Idle Nudge beneath it -->
+      <div class="text-container">
+        <p class="text" id="typewriter-output">
+          <span class="cursor" id="cursor"></span>
+        </p>
+        <span id="idle-message" class="idle-message"
+          >Priority access is strictly limited. Secure your position.</span
+        >
+      </div>
+
+      <!-- Morphing Input -->
+      <div class="input-wrapper">
+        <p>Join the safe list today</p>
+        <div class="morph-container" id="morph-box">
+          <button id="toggle-btn">Request access</button>
+          <form id="safelist-form" class="input-group">
+            <input
+              type="email"
+              id="username-input"
+              placeholder="Enter email to join the safe list."
+              autocomplete="off"
+            />
+            <button class="submit-arrow" aria-label="Submit">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <!-- Footer Note -->
+      <div class="footer-note">AutoMate &copy; 2026</div>
+    </footer>
+
+    <script src="Teaser.js" defer></script>
+  </body>
+</html>
